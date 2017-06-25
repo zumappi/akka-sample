@@ -1,7 +1,7 @@
-package com.github.zumappi.akka.sample.args
+package com.github.zumappi.akka.sample.actor.args
 
 import akka.actor.{Actor, ActorLogging}
-import com.github.zumappi.akka.sample.model.Person
+import com.github.zumappi.akka.sample.actor.model.Person
 
 /**
   * Created by zumappi on 2017/06/25.

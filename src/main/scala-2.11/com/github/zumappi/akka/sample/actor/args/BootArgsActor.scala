@@ -1,7 +1,7 @@
-package com.github.zumappi.akka.sample.args
+package com.github.zumappi.akka.sample.actor.args
 
 import akka.actor.{ActorSystem, Props}
-import com.github.zumappi.akka.sample.model.Person
+import com.github.zumappi.akka.sample.actor.model.Person
 import com.typesafe.scalalogging.Logger
 import org.slf4j.LoggerFactory
 

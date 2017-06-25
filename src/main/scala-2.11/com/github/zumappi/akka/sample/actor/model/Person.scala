@@ -1,4 +1,4 @@
-package com.github.zumappi.akka.sample.model
+package com.github.zumappi.akka.sample.actor.model
 
 /**
   * Created by zumappi on 2017/06/25.

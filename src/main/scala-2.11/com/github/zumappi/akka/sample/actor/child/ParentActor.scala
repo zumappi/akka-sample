@@ -1,4 +1,4 @@
-package com.github.zumappi.akka.sample.child
+package com.github.zumappi.akka.sample.actor.child
 
 import scala.concurrent.duration._
 import akka.actor.SupervisorStrategy.{Restart, Stop}

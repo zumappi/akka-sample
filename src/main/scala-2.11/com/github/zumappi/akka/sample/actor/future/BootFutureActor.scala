@@ -1,11 +1,11 @@
-package com.github.zumappi.akka.sample.future
+package com.github.zumappi.akka.sample.actor.future
 
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 import akka.actor.{ActorSystem, Props}
 import akka.pattern.ask
 import akka.util.Timeout
-import com.github.zumappi.akka.sample.model.Person
+import com.github.zumappi.akka.sample.actor.model.Person
 import com.typesafe.scalalogging.Logger
 import org.slf4j.LoggerFactory
 

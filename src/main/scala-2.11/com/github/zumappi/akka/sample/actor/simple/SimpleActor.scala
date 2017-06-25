@@ -1,4 +1,4 @@
-package com.github.zumappi.akka.sample.simple
+package com.github.zumappi.akka.sample.actor.simple
 
 import akka.actor.{Actor, ActorLogging}
 
