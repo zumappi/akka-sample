@@ -26,9 +26,9 @@ Actor が戻り値を返して呼び出し元で参照している実装
 sbt "runMain com.github.zumappi.akka.sample.actor.lifecycle.BootLifeCycleActor"
 ```
 Actor のライフサイクルを確認するための実装
-- `preStart``preRestart``postRestart``postStop`をそれぞれの呼び出しタイミングを確認できる
+- `preStart` `preRestart` `postRestart` `postStop`をそれぞれの呼び出しタイミングを確認できる
 - 例外が発生した場合に、再起動処理が実行される
-- `preRestart``postRestart`は親の実装を呼び出すようにしている
+- `preRestart` `postRestart`は親の実装を呼び出すようにしている
     - `preRestart`の場合、子 Actor の停止をしないと再起動ができなくなる
     - `postRestart`の場合、内部的に`preStart`の呼び出しを行っている
 
