@@ -20,6 +20,11 @@ object BootLifeCycleActor extends App {
   actor ! "error"
   actor ! "sample"
   log.info("boot finish.")
+  Thread.sleep(1000)
 
+  actorSystem.stop(actor)
+  Thread.sleep(1000)
+
+  actorSystem.terminate
   System.exit(0)
 }

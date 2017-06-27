@@ -23,6 +23,11 @@ object BootChildActor extends App {
   actor ! "sample"
   actor ! 1
   log.info("boot finish.")
+  Thread.sleep(1000)
 
+  actorSystem.stop(actor)
+  Thread.sleep(1000)
+
+  actorSystem.terminate
   System.exit(0)
 }

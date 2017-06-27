@@ -26,21 +26,21 @@ object BootFutureActor extends App {
   implicit val timeout = Timeout(1 seconds)
 
   log.info("boot start.")
-  val f1 = actor ? "test"
+  val f1 = (actor ? "test").mapTo[Person]
   f1 onComplete {
     case Success(p) => log.info(s"Success!. ${p}")
     case Failure(t) => log.error(s"Failure!. ${t.getMessage}")
   }
   Thread.sleep(1000)
 
-  val f2 = actor ? Person("tom", 25)
+  val f2 = (actor ? Person("tom", 25)).mapTo[Person]
   f2 onComplete {
     case Success(p) => log.info(s"Success!. ${p}")
     case Failure(t) => log.error(s"Failure!. ${t.getMessage}")
   }
   Thread.sleep(1000)
 
-  val f3 = actor ? "sample"
+  val f3 = (actor ? "sample").mapTo[Person]
   f3 onComplete {
     case Success(p) => log.info(s"Success!. ${p}")
     case Failure(t) => log.error(s"Failure!. ${t.getMessage}")
@@ -49,5 +49,9 @@ object BootFutureActor extends App {
 
   log.info("boot finish.")
 
+  actorSystem.stop(actor)
+  Thread.sleep(1000)
+
+  actorSystem.terminate
   System.exit(0)
 }
