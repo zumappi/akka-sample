@@ -1,8 +1,8 @@
 package com.github.zumappi.akka.sample.actor.child
 
-import scala.concurrent.duration._
 import akka.actor.SupervisorStrategy.{Restart, Stop}
 import akka.actor.{Actor, ActorInitializationException, ActorKilledException, ActorLogging, DeathPactException, OneForOneStrategy, Props}
+
 /**
   * Created by zumappi on 2017/06/25.
   */

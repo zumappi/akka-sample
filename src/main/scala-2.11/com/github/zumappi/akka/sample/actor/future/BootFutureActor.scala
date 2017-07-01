@@ -9,7 +9,6 @@ import com.github.zumappi.akka.sample.actor.model.Person
 import com.typesafe.scalalogging.Logger
 import org.slf4j.LoggerFactory
 
-import scala.concurrent.Await
 import scala.util.{Failure, Success}
 
 /**
@@ -31,23 +30,21 @@ object BootFutureActor extends App {
     case Success(p) => log.info(s"Success!. ${p}")
     case Failure(t) => log.error(s"Failure!. ${t.getMessage}")
   }
-  Thread.sleep(1000)
 
   val f2 = (actor ? Person("tom", 25)).mapTo[Person]
   f2 onComplete {
     case Success(p) => log.info(s"Success!. ${p}")
     case Failure(t) => log.error(s"Failure!. ${t.getMessage}")
   }
-  Thread.sleep(1000)
 
   val f3 = (actor ? "sample").mapTo[Person]
   f3 onComplete {
     case Success(p) => log.info(s"Success!. ${p}")
     case Failure(t) => log.error(s"Failure!. ${t.getMessage}")
   }
-  Await.result(f3, timeout.duration)
 
   log.info("boot finish.")
+  Thread.sleep(3000)
 
   actorSystem.stop(actor)
   Thread.sleep(1000)

@@ -19,8 +19,7 @@ class FutureActor extends Actor with ActorLogging {
     }
     case unknown   => {
       log.info(s"received unknown message. ${unknown}")
-      Thread.sleep(3000)
-      sender ! Person("error", 99)
+      Thread.sleep(2000)
     }
   }
 }
